@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            text-align: center;
+        }
+
+        .parentDiv {
+            display: inline-block;
+            width: 300px;
+            height: 300px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .divBtn {
+            display: inline-block;
+            text-align: center;
+            height: 40px;
+            color: white;
+            position: relative;
+            width: 170px;
+            top: 150px;
+            left: 140px;
+            transform: translate(-80%, -50%);
+            cursor: pointer;
+        }
+
+        .divBtn:hover {
+            letter-spacing: 2px;
+            transition: .5s;
+        }
+
+        .divBtn::before {
+            content: "";
+            position: absolute;
+            transition: .5s;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            opacity: 0.3;
+        }
+
+        .divBtn::after {
+            content: "";
+            position: absolute;
+            transition: .5s;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            right: 50%;
+            border-top: 0.5px solid white;
+            border-bottom: 0.5px solid white;
+            opacity: 0;
+        }
+
+        .divBtn:hover::before {
+            content: "";
+            position: absolute;
+            transition: .5s;
+            top: 0;
+            bottom: 0;
+            right: 50%;
+            left: 50%;
+            background: white;
+            opacity: 0;
+        }
+
+        .divBtn:hover::after {
+            content: "";
+            position: absolute;
+            transition: .5s;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            border-top: 0.5px solid white;
+            border-bottom: 0.5px solid white;
+            opacity: 1;
+        }
+
+        span {
+            position: relative;
+            top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="parentDiv" style="background: orange;">
+            <div class="divBtn">
+                <span>Login</span>
+            </div>
+        </div>
+        <div class="parentDiv" style="background: rgb(101, 130, 167);">
+            <div class="divBtn">
+                <span>Register</span>
+            </div>
+        </div>
+        <div class="parentDiv" style="background: rgb(69, 69, 102);">
+            <div class="divBtn">
+                <span>Recover Password</span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

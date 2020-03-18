@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <style>
+        .container {
+            position: absolute;
+            width: 800px;
+            height: 400px;
+            background: green;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .btnHolder {
+            position: relative;
+            top: 45px;
+            width: 600px;
+            height: 300px;
+            margin: auto;
+        }
+
+        .btn {
+            position: relative;
+            display: inline-block;
+            width: 220px;
+            height: 50px;
+            border: 1px solid white;
+            border-radius: 25px;
+            padding: 10px;
+            text-align: center;
+            margin: 40px 10px 20px 30px;
+            cursor: pointer;   
+        }
+
+        span {
+            line-height: 2.5;
+        }
+
+        .arrow1 {
+            position: relative;
+            top: -37px;
+            left: 110px;
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .arrow2 {
+            position: relative;
+            top: -37px;
+            right: 110px;
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .arrow3 {
+            position: relative;
+            top: -37px;
+            left: 60px;
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .arrow4 {
+            position: relative;
+            top: -37px;
+            right: 60px;
+            opacity: 0;
+            transition: .3s;
+        }
+
+        .btn:hover {
+            background: rgb(4, 77, 4);
+        }
+
+        .btn:hover>.arrow1 {
+            opacity: 1;
+            left: 80px;
+        }
+
+        .btn:hover>.arrow2 {
+            opacity: 1;
+            right: 80px;
+        }
+
+        .btn:hover>.arrow3 {
+            opacity: 1;
+            left: 85px;
+        }
+
+        .btn:hover>.arrow4 {
+            opacity: 1;
+            right: 85px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="btnHolder">
+            <div class="btn">
+                <span>CONTINUE</span>
+                <div class="arrow1">&rarr;</div>
+            </div>
+            <div class="btn">
+                <span>CONTINUE</span>
+                <div class="arrow2">&larr;</div>
+            </div>
+            <div class="btn">
+                <span>CONTINUE</span>
+                <div class="arrow3">&rarr;</div>
+            </div>
+            <div class="btn">
+                <span>CONTINUE</span>
+                <div class="arrow4">&larr;</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
