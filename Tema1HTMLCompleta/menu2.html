@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Document</title>
     <style>
@@ -11,38 +12,48 @@
             border-bottom: 20px solid rgb(194, 246, 164);
         }
 
-        div {
-            display: inline-block;
-            margin: auto;
-            color: rgb(174, 243, 174);
-        }
-
-        .div2 {
-            display: inline-block;
-            margin: auto;
-            color: white;
-        }
-
-        .div2::after {
-            content: "";
+        button {
             position: relative;
-            top:5px;
-            left: -47px;
+            width: 13%;
+            height: 50px;
+            margin: auto;
+            background: green;
+            border: 0;
+            color: rgb(174, 243, 174);
+            cursor: pointer;
+        }
+
+        button::after {
+            position: absolute;
+            content: "";
+            top: 26px;
+            left: 45%;
             border-top: 12px transparent solid;
             border-left: 12px transparent solid;
             border-right: 12px transparent solid;
-            border-bottom: 12px rgb(174, 243, 174) solid;;
+            border-bottom: 12px rgb(174, 243, 174) solid;
+            opacity: 0;
+        }
+
+        button:hover {
+            color: white;
+        }
+
+        button:hover::after {
+            opacity: 1;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
-        <div>HOME</div>
-        <div class="div2">BOOKING</div>
-        <div>PASSENGER INFORMATION</div>
-        <div>CUSTOMER SERVICE</div>
-        <div>ABOUT US</div>
-        <div>FANSHOP</div>
+        <button>HOME</button>
+        <button>BOOKING</button>
+        <button>PASSENGER INFORMATION</button>
+        <button>CUSTOMER SERVICE</button>
+        <button>ABOUT US</button>
+        <button>FANSHOP</button>
     </div>
 </body>
+
 </html>

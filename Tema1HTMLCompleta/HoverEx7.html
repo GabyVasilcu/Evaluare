@@ -39,23 +39,19 @@
 
         .divBtn::before{
             content: "";
-            position: relative;
+            position: absolute;
             transition: 0.5s;
             top: 50%;
             bottom: 50%;
+            right: 0;
+            left: 0;
             background: white;
             opacity: 0;
         }
 
         .divBtn:hover::before {
-            content: "";
-            position: absolute;
-            transition: 0.5s;
             top: 0;
             bottom: 0;
-            right: 0;
-            left: 0;
-            background: white;
             opacity: 0.4;
         }
 
