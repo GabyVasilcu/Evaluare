@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <style>
+        .container {
+            width: 500px;
+            height: 700px;
+        }
+
+        .backContainer {
+            position: fixed;
+            width: 500px;
+            height: 700px;
+        }
+
+        .backDiv1 {
+            width: 500px;
+            height: 550px;
+            background: rgb(5, 13, 121);
+        }
+
+        .backDiv2 {
+            width: 500px;
+            height: 100px;
+            background: white;
+        }
+
+        .backDiv3 {
+            width: 500px;
+            height: 50px;
+            background: rgb(141, 193, 241);
+        }
+
+        .frontContainer {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            width: 450px;
+            height: 650px;
+            background: rgb(246, 207, 133);
+            border-radius: 20px;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-left: 30px;
+            margin-bottom: 45px;
+        }
+
+        .wideInput {
+            padding: 15px;
+            border-radius: 5px;
+            border: 0;
+            width: 350px;
+            margin-left: 30px;
+            font-weight: bold;
+        }
+
+        .narrowInput {
+            position: relative;
+            left: 30px;
+            padding: 15px;
+            width: 156px;
+            margin-right: 5px;
+            border-radius: 5px;
+            border: 0;
+            font-weight: bold;
+        }
+
+        button {
+            width: 380px;
+            height: 50px;
+            margin-left: 30px;
+            border-radius: 5px;
+            border: 0;
+            background: rgb(5, 13, 121);
+            color: rgb(246, 207, 133);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        ::placeholder {
+            color: rgb(207, 207, 207);
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="backContainer">
+            <div class="backDiv1"></div>
+            <div class="backDiv2"></div>
+            <div class="backDiv3"></div>
+            <div class="frontContainer">
+                <h2>Complete the form for your salesforce needs</h2>
+                <input class="wideInput" type="text" placeholder="I need salesforce help with"> <br></br>
+                <input class="narrowInput" type="text" placeholder="First Name">
+                <input class="narrowInput" type="text" placeholder="Last Name"> <br></br>
+                <input class="narrowInput" type="text" placeholder="Email">
+                <input class="narrowInput" type="text" placeholder="Phone"> <br></br>
+                <input class="wideInput" type="text" placeholder="Your Role"> <br></br>
+                <input class="wideInput" type="text" placeholder="Company"> <br></br>
+                <input class="wideInput" type="text" placeholder="Web Adrress"> <br></br>
+                <button>Submit</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

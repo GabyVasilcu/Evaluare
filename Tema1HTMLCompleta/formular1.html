@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            width: 99vw;
+            height: 98vh;
+            font-weight: bold;
+        }
+
+        .rightSide {
+            display: inline-block;
+            width: 70%;
+            height: 99% 
+        }
+
+        .leftSide {
+            display: inline-block;
+            width: 30%;
+            height: 99%;
+            background: rgb(95, 7, 195);;
+        }
+
+        .titleMenu {
+            display: inline-block;
+            position: relative;
+            top: 20px;
+            left: 17%;
+            width: 20%;
+            height: 60px;
+            text-align: center;
+            color: gray;
+            line-height: 1.5;
+            font-size: 20px;
+            border-bottom: 2px solid gray;
+            opacity: 0.3;
+        }
+
+        .titleMenu:hover {
+            color: rgb(95, 7, 195);
+            border-bottom: 2px solid rgb(43, 184, 219);
+            opacity: 1;
+        }
+
+        .firstSetInput {
+            display: flex;
+            position: relative;
+            top: 70px;
+            width: 100%;
+            height: 120px;
+            color: rgb(182, 182, 182);
+            border-bottom: 2px solid rgb(226, 224, 224);
+            padding-bottom: 10px;
+        }
+
+        .firstN {
+            margin: auto;
+        }
+
+        .lastN {
+            margin: auto;
+        }
+
+        .mail {
+            margin: auto;
+        }
+
+        .input1 {
+            width: 20vw;
+            font-size: 15px;
+            height: 35px;
+            margin: auto;
+            border: 2px solid rgb(230, 229, 229);
+            color: rgb(95, 7, 195);
+        }
+
+        .input2 {
+            font-size: 15px;
+            width: 200%;
+            height: 35px;
+            border: 2px solid rgb(230, 229, 229);
+            color: rgb(95, 7, 195);
+        }
+
+        .secondSetInput {
+            position: relative;
+            top: 150px;
+            width: 100%;
+        }
+
+        .country {
+            position: relative;
+            top: -1px;
+            width: 20vw;
+            height: 40.5px;
+            color: rgb(95, 7, 195);
+            border: 2px solid rgb(226, 224, 224);
+        }
+
+        .set1 {
+            display: inline-block;
+            width: 20vw;
+            margin-right: 5px;
+        }
+
+        .set2 {
+            display: inline-block;
+            width: 20vw;
+        }
+
+        .set3 {
+            display: inline-block;
+            width: 20vw;
+        }
+
+        .set4 {
+            display: inline-block;
+            width: 20vw;
+            margin-right: 5px;
+        }
+
+        .set5 {
+            display: inline-block;
+            width: 20vw;
+        }
+
+        .checkbox1 {
+            position: relative;
+            top: 220px;
+            color: rgb(95, 7, 195);
+            border-bottom: 2px solid rgb(226, 224, 224);
+            padding-bottom: 30px;
+        }
+
+        .checkbox2 {
+            position: relative;
+            top: 300px;
+            color: rgb(95, 7, 195);
+            border-bottom: 2px solid rgb(226, 224, 224);
+            padding-bottom: 30px;
+        }
+
+        .return {
+            position: relative;
+            top: 380px;
+            left: 10%;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 3;
+            border: 2px solid gray;
+            color: gray;
+            opacity: 0.4;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .return:hover {
+            opacity: 0.7;
+            background: red;
+            color: white;
+        }
+
+        .continue {
+            position: relative;
+            top: 327px;
+            left: 65%;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 3;
+            border: 2px solid gray;
+            color: gray;
+            opacity: 0.4;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .continue:hover {
+            opacity: 0.7;
+            background: green;
+            color: white;
+        }
+
+        .title {
+            position: relative;
+            width: 29.7vw;
+            height: 83px;
+            color: white;
+            border-bottom: 2px solid rgb(44, 13, 85);
+            line-height: 3.3;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        .text {
+            position: relative;
+            width: 29.7vw;
+            height: 65px;
+            border-bottom: 2px solid rgb(44, 13, 85);
+            text-align: center;
+            line-height: 4;
+            color: rgb(43, 184, 219);
+        }
+
+        .shipping {
+            position: relative;
+            width: 29.7vw;
+            height: 65px;
+            text-align: center;
+            line-height: 4;
+            color: rgb(180, 180, 180);
+            opacity: 0.5;
+        }
+
+        .total {
+            position: relative;
+            width: 29.7vw;
+            height: 65px;
+            text-align: center;
+            line-height: 4;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="rightSide">
+            <div class="upperText">
+                <div class="titleMenu">Shipping</div>
+                <div class="titleMenu">Payment</div>
+                <div class="titleMenu">Confirmation</div>
+            </div>
+            <div class="firstSetInput">
+                <div class="firstN">
+                    <label>First name</label> <br></br>
+                    <input type="text" class="input1">
+                </div>
+                <div class="lastN">
+                    <label>Last name</label> <br></br>
+                    <input type="text" class="input1">
+                </div>
+                <div class="mail">
+                    <label>E-mail</label> <br></br>
+                    <input type="text" class="input1">
+                </div>
+            </div>
+            <div class="secondSetInput">
+                <div class="set1">
+                    <label>Company</label> <br></br>
+                    <input type="text" class="input1">
+                </div>
+                <div class="set2">
+                    <label>Adress</label> <br></br>
+                    <input type="text" class="input2">
+                </div> <br></br>
+                <div class="set3">
+                    <label>Country</label> <br></br>
+                    <select class="country">
+                        <option value="Afganistan">Afghanistan</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="American Samoa">American Samoa</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Anguilla">Anguilla</option>
+                        <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Aruba">Aruba</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Bahamas">Bahamas</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Barbados">Barbados</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Belize">Belize</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Fiji">Fiji</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="French Guiana">French Guiana</option>
+                        <option value="French Polynesia">French Polynesia</option>
+                        <option value="French Southern Ter">French Southern Ter</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="Gambia">Gambia</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                </div>
+                <div class="set4">
+                    <label>City</label> <br></br>
+                    <input type="text" class="input1">
+                </div>
+                <div class="set5">
+                    <label>Code</label> <br></br>
+                    <input type="text" class="input1">
+                </div>
+            </div>
+            <div class="checkbox1">
+                <input type="checkbox">
+                <label>My shipping and billing information is the same</label>
+            </div>
+            <div class="checkbox2">
+                <input type="checkbox">
+                <label>Create a password for easier account acces</label>
+            </div>
+            <div class="return">
+                <span>RETURN TO STORE</span>
+            </div>
+            <div class="continue">
+                <span>CONTINUE</span>
+            </div>
+        </div>
+        <div class="leftSide">
+            <div class="title">Shopping Cart</div>
+            <div class="text">Vans Authentic Black</div>
+            <div class="text">Cup 454ml</div>
+            <div class="text">Ucon Kalled Jacket</div>
+            <div class="text">Vans Seicoli Sunglasses</div>
+            <div class="text">Winc HS Sweater</div>
+            <div class="shipping">Shipping</div>
+            <div class="total">Total</div>
+        </div>
+    </div>
+</body>
+
+</html>

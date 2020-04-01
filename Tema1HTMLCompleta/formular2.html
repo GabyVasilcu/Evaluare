@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <style>
+        body {
+            background: rgb(148, 19, 207);
+        }
+
+        img {
+            position: absolute;
+            top: 3%;
+            left: 90%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+
+        h2 {
+            position: absolute;
+            top: 2.5%;
+            left: 7%;
+            color: rgb(148, 19, 207);
+        }
+
+        .hoverDivs {
+            position: relative;
+            top: 5%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: rgb(212, 212, 212);
+        }
+
+        .text1 {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .text1:hover {
+            color: rgb(148, 19, 207);
+        }
+
+        .text2 {
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .text2:hover {
+            color: rgb(148, 19, 207);
+        }
+
+        .text3 {
+            cursor: pointer;
+        }
+
+        .text3:hover {
+            color: rgb(148, 19, 207);
+        }
+
+        .container {
+            display: inline-block;
+            position: absolute;
+            top: 7%;
+            left: 10%;
+            width: 80%;
+            height: 85%;
+            background: white;
+            box-shadow: 0px 48px 4px -25px rgba(26, 13, 38, 1);
+        }
+
+        .leftSide {
+            position: absolute;
+            top: 15%;
+            left: 3%;
+            width: 45%;
+            height: 75%;
+            background: rgb(243, 243, 243);
+            font-weight: bold;
+        }
+
+        .leftContainer {
+            position: relative;
+            top: 2%;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        .set1 {
+            position: relative;
+            left: 15%;
+            display: inline-block;
+            margin-right: 78px;
+            color: rgb(192, 191, 191);
+        }
+
+        .set2 {
+            position: relative;
+            left: 15%;
+            display: inline-block;
+            color: rgb(192, 191, 191);
+        }
+
+        .name {
+            padding: 5px;
+            width: 120%;
+        }
+
+        .mail {
+            position: relative;
+            left: 15%;
+            width: 70%;
+            padding: 5px;
+            color: rgb(192, 191, 191);
+        }
+
+        .adress {
+            position: relative;
+            left: 15%;
+            width: 70%;
+            padding: 5px;
+            color: rgb(192, 191, 191);
+        }
+
+        .set3 {
+            position: relative;
+            left: 15%;
+            display: inline-block;
+            margin-right: 78px;
+            color: rgb(192, 191, 191);
+        }
+
+        .set4 {
+            position: relative;
+            left: 15%;
+            display: inline-block;
+            color: rgb(192, 191, 191);
+        }
+
+        .city {
+            padding: 5px;
+            width: 120%;
+        }
+
+        .country {
+            padding: 5px;
+            width: 120%;
+            width: 150%;
+        }
+
+        .set5 {
+            position: relative;
+            left: 15%;
+            display: inline-block;
+            color: rgb(192, 191, 191);
+        }
+
+        .prefixNr {
+            padding: 5px;
+            width: 10%;
+            margin-right: -6px;
+            background: rgb(233, 233, 233);
+        }
+
+        .number {
+            padding: 5px;
+            width: 60%;
+            color: rgb(148, 19, 207);
+        }
+
+        .rightSide {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            width: 45%;
+            height: 75%;
+            font-weight: bold;
+        }
+
+        .deliveryHolder {
+            position: absolute;
+            width: 100%;
+            height: 65%;
+            background: rgb(243, 243, 243);
+
+        }
+
+        .spanTitle {
+            position: relative;
+            top: -15px;
+        }
+
+        .delivery1 {
+            position: relative;
+            top: 5%;
+            left: 9%;
+            width: 40%;
+            height: 30%;
+            background: white;
+            text-align: center;
+            color: rgb(200, 200, 200);
+        }
+
+        .span1 {
+            position: relative;
+            top: -15px;
+            left: 3%;
+            font-size: 60px;
+            color: rgb(148, 19, 207);
+        }
+
+        .span2 {
+            position: relative;
+            top: -40px;
+            left: 1.5%;
+            font-size: 25px;
+            color: rgb(148, 19, 207);
+        }
+
+        .term {
+            font-size: 20px;
+            margin-top: -20px;
+            color: rgb(155, 155, 155);
+        }
+
+        .delivery2 {
+            position: relative;
+            top: -25%;
+            left: 53%;
+            width: 40%;
+            height: 30%;
+            background: white;
+            text-align: center;
+            background: rgb(148, 19, 207);
+        }
+
+        .span3 {
+            position: relative;
+            top: 21px;
+            left: 3%;
+            font-size: 60px;
+            color: white;
+        }
+
+        .span4 {
+            position: relative;
+            left: 1.5%;
+            font-size: 25px;
+            color: white;
+        }
+
+        .term2 {
+            font-size: 20px;
+            margin-top: 17px;
+            color: rgb(72, 25, 93);
+        }
+
+        .estTime {
+            position: relative;
+            top: -25px;
+            left: 10%;
+            color: rgb(200, 200, 200);
+            font-size: 18px;
+        }
+
+        .date {
+            position: relative;
+            top: -25px;
+            left: 10%;
+            color: black;
+            font-size: 18px;
+        }
+
+        .track {
+            position: relative;
+            top: -25px;
+            left: 10%;
+            color: rgb(200, 200, 200);
+            font-size: 18px;
+        }
+
+        .checkbox {
+            position: relative;
+            top: 430px;
+            color: rgb(200, 200, 200)
+        }
+
+        .confirm {
+            position: relative;
+            top: 460px;
+            width: 100%;
+            height: 100px;
+            background: rgb(148, 19, 207);
+            text-align: center;
+            color: white;
+            font-size: 30px;
+            line-height: 3;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>SHPPNG</h2>
+        <div class="hoverDivs">
+            <span class="text1">Shopping Bag</span>
+            <span class="text2">Checkout</span>
+            <span class="text3">Confirmation</span>
+        </div>
+        <img src="cart.jpg">
+        <div class="leftSide">
+            <h3>Personal information</h3>
+            <div class="leftContainer">
+                <div class="set1">
+                    <label class="name">First Name</label> <br></br>
+                    <input type="text" class="name">
+                </div>
+                <div class="set2">
+                    <label class="name">Last Name</label> <br></br>
+                    <input type="text" class="name">
+                </div> <br></br>
+                <label class="mail">Email Adress</label> <br></br>
+                <input type="text" class="mail" style="color: black;"> <br></br>
+                <label class="adress">Street</label> <br></br>
+                <input type="text" class="adress" style="color: black;"> <br></br>
+                <div class="set3">
+                    <label class="city">City</label> <br></br>
+                    <input type="text" class="city">
+                </div>
+                <div class="set4">
+                    <label class="country">Country</label> <br></br>
+                    <select class="country">
+                        <option value="Afganistan">Afghanistan</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="American Samoa">American Samoa</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Anguilla">Anguilla</option>
+                        <option value="Antigua & Barbuda">Antigua & Barbuda</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Aruba">Aruba</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Bahamas">Bahamas</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Barbados">Barbados</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Belize">Belize</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Fiji">Fiji</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="French Guiana">French Guiana</option>
+                        <option value="French Polynesia">French Polynesia</option>
+                        <option value="French Southern Ter">French Southern Ter</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="Gambia">Gambia</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Germany">Germany</option>
+                    </select>
+                </div> <br></br>
+                <div class="set5">
+                    <label>Phone number</label> <br></br>
+                    <input placeholder="Prefix" class="prefixNr">
+                    <input class="number" inputmode="number">
+                </div>
+            </div>
+        </div>
+        <div class="rightSide">
+            <div class="deliveryHolder">
+                <h3>Delivery</h3>
+                <div class="delivery1">
+                    <span class="spanTitle">Delivery fee</span> <br></br>
+                    <span class="span1">0</span>
+                    <span class="span2">$</span>
+                    <p class="term">3-4 weeks</p>
+                </div>
+                <div class="delivery2">
+                    <span class="span3">5</span>
+                    <span class="span4">$</span>
+                    <p class="term2">2-5 days</p>
+                </div>
+                    <p>
+                        <span class="estTime">Estimated delivery time:</span>
+                        <span class="date">August 4th</span>
+                    </p>
+                    <p class="track">Every package has a tracking number</p>           
+            </div>
+            <input type="checkbox" class="checkbox" style="cursor: pointer;">
+            <label class="checkbox">Subscribe to our newsletter</label> <br></br>
+            <input type="checkbox" class="checkbox" style="cursor: pointer;">
+            <label class="checkbox">Create an account</label>
+            <div class="confirm">Confirm my order</div>
+        </div>
+    </div>
+</body>
+
+</html>
