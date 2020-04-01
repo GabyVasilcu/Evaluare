@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <style>
+        .containersHolder {
+            display: flex;
+            width: 100vw;
+            height: 95vh;
+        }
+
+        .bigContainer {
+            display: inline-block;
+            width: 60%;
+            height: 95%;
+            border-right: 4px solid black;
+            margin: auto;
+        }
+
+        .smallContainer {
+            left: 10px;
+            width: 40%;
+            height: 95%;
+            margin: auto;
+        }
+
+        .smallerDiv {
+            position: relative;
+            display: inline-block;
+            top: 5%;
+            width: 35%;
+            height: 25%;
+            border: 1px solid black;
+            margin-right: 5px;
+            margin: 10px;
+            margin-left: 50px;
+            padding: 5px;
+        }
+
+        .image {
+            position: relative;
+            top: 5%;
+            width: 30%;
+            height: 30%;
+            background: green;
+        }
+
+        .btnAdd {
+            position: absolute;
+            top: 80%;
+            left: 60%;
+            width: 35%;
+            height: 15%;
+            border-radius: 10px;
+            background: rgb(20, 178, 206);
+            color: white;
+            text-align: center;
+            line-height: 2;
+            font-weight: bold;
+            cursor: pointer;
+            border: 0;
+        }
+
+        .btnRemove {
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            width: 45%;
+            height: 15%;
+            border-radius: 10px;
+            background: rgb(20, 178, 206);
+            color: white;
+            text-align: center;
+            line-height: 2;
+            font-weight: bold;
+            cursor: pointer;
+            border: 0;
+        }
+
+        h3 {
+            position: absolute;
+            top: 5%;
+            left: 45%;
+        }
+
+        p {
+            position: relative;
+            top: 5%;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .countProducts {
+            position: relative;
+            top: -100px;
+            left: 100px;
+            width: 20px;
+            text-align: center;
+            border: 2px solid rgb(20, 178, 206);
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", start)
+
+        var insideDiv = [
+            {
+                title: "Heading1",
+                text: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+                btn: "ADD",
+                img: ""
+            },
+            {
+                title: "Heading2",
+                text: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+                btn: "ADD",
+                img: ""
+            },
+            {
+                title: "Heading3",
+                text: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+                btn: "ADD",
+                img: ""
+            },
+            {
+                title: "Heading4",
+                text: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+                btn: "ADD",
+                img: ""
+            },
+            {
+                title: "Heading5",
+                text: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+                btn: "ADD",
+                img: ""
+            },
+            {
+                title: "Heading6",
+                text: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+                btn: "ADD",
+                img: ""
+            },
+        ];
+        var removeDivs = {};
+        var containersHolder;
+        var bigContainer;
+        var smallContainer;
+
+        function start() {
+            containersHolder = document.createElement("div");
+            containersHolder.className = "containersHolder";
+            bigContainer = document.createElement("div");
+            bigContainer.className = "bigContainer";
+            smallContainer = document.createElement("div");
+            smallContainer.className = "smallContainer";
+
+            document.body.appendChild(containersHolder);
+            containersHolder.appendChild(bigContainer);
+            containersHolder.appendChild(smallContainer);
+
+            for (var i = 0; i < insideDiv.length; i++) {
+                var div = document.createElement("div");
+                div.className = "smallerDiv";
+                div.id = "div" + i;
+                var titleDiv = document.createElement("h3");
+                titleDiv.innerText = insideDiv[i].title;
+                var textDiv = document.createElement("p");
+                textDiv.innerText = insideDiv[i].text;
+                var image = document.createElement("div");
+                image.className = "image";
+                image.src = insideDiv[i].img;
+                var btnAdd = document.createElement("button");
+                btnAdd.className = "btnAdd";
+                btnAdd.innerText = insideDiv[i].btn;
+                btnAdd.id = "btnAdd" + i;
+
+                btnAdd.addEventListener("click", btnAddClick);
+
+                div.appendChild(image);
+                div.appendChild(btnAdd);
+                div.appendChild(titleDiv);
+                div.appendChild(textDiv);
+                bigContainer.appendChild(div);
+            }
+        }
+
+
+        function btnAddClick() {
+            var count;
+            var counter;
+            var parent = this.parentElement;
+            var parentId = this.parentElement.id;
+            var clone = parent.cloneNode(true);
+
+            if (removeDivs[parentId] == null) {
+                smallContainer.appendChild(clone);
+
+                var btnRemove = document.createElement("button");
+                btnRemove.className = "btnRemove";
+                btnRemove.innerHTML = "REMOVE";
+                btnRemove.addEventListener("click", btnRemoveClick);
+
+                removeDivs[parentId] = { counter: 1, element: clone };
+                clone.id = parentId + "smallContainer";
+                clone.appendChild(btnRemove);
+
+                count = document.createElement("div");
+                count.className = "countProducts";
+                count.innerHTML = removeDivs[parentId].counter;
+                clone.appendChild(count);
+            } else {
+                removeDivs[parentId].counter++;
+                var parentId2 = document.getElementById(parentId + "smallContainer");
+                parentId2.getElementsByClassName("countProducts")[0].innerHTML = removeDivs[parentId].counter;
+            }
+
+            function btnRemoveClick() {
+                removeDivs[parentId].counter--;
+                count.innerHTML = removeDivs[parentId].counter;
+
+                if (removeDivs[parentId].counter == 0) {
+                    delete removeDivs[parentId];
+                    clone.parentNode.removeChild(clone);
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
