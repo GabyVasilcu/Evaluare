@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            width: 95%;
+            height: 700px;
+            margin: auto;
+        }
+
+        .upperDiv {
+            background: black;
+            height: 80px;
+            border-radius: 10px;
+        }
+
+        .middleDiv {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .turquoise {
+            background: rgb(36, 177, 165);
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        .compoundDiv {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .orange {
+            background: orange;
+            height: 70px;
+            border-radius: 10px;
+        }
+
+        .beige {
+            background: beige;
+            height: 70px;
+            border-radius: 10px;
+        }
+
+        .bottomDiv {
+            background: rgb(1, 26, 42);
+            height: 80px;
+            border-radius: 10px;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            .container {
+                height: 500px;
+            }
+
+            .middleDiv {
+                height: 300px;
+                flex-direction: row;
+            }
+            
+            .turquoise {
+                flex: 6;
+                order: 2;
+            }
+
+            .compoundDiv {
+                flex: 1;
+                height: 300px;
+                flex-direction: column;
+            }
+
+            .orange {
+                flex: 2;
+                margin-right: 15px;
+                margin-bottom: 5px;
+            }
+
+            .beige {
+                flex: 1;
+                order: 2;
+                margin-right: 15px;
+                margin-top: 7px;
+            }
+        }
+
+        @media only screen and (min-width: 992px)and (max-width: 1200px) {
+            .container {
+                height: 500px;
+            }
+
+            .middleDiv {
+                height: 300px;
+                flex-direction: row;
+            }
+
+            .turquoise {
+                flex: 6;
+                order: 2;
+            }
+
+            .compoundDiv {
+                flex: 1;
+                height: 300px;
+                flex-direction: column;
+            }
+
+            .orange {
+                flex: 2;
+                margin-right: 15px;
+                margin-bottom: 5px;
+            }
+
+            .beige {
+                flex: 1;
+                order: 2;
+                margin-right: 15px;
+                margin-top: 7px;
+            }
+        }
+
+        @media only screen and (min-width:768px) and (max-width: 992px) {
+            .container {
+                height: 600px;
+            }
+
+            .middleDiv {
+                height: 400px;
+            }
+
+            .compoundDiv {
+                height: 100px;
+                flex-direction: row;
+            }
+
+            .turquoise {
+                margin-bottom: 30px;
+            }
+
+            .orange {
+                flex: 2;
+                order: 1;
+                margin-left: 5px;
+            }
+
+            .beige {
+                flex: 1;
+                margin-right: 5px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .container {
+                height: 700px;
+            }
+
+            .middleDiv {
+                height: 500px;
+            }
+
+            .turquoise {
+                margin-bottom: 15px;
+            }
+
+            .compoundDiv {
+                height: 170px;
+            }  
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="upperDiv"></div>
+        <div class="middleDiv">
+            <div class="turquoise"></div>
+            <div class="compoundDiv">
+                <div class="orange"></div>
+                <div class="beige"></div>
+            </div>
+        </div>
+        <div class="bottomDiv"></div>
+    </div>
+</body>
+
+</html>
