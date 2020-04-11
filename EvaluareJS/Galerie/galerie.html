@@ -9,8 +9,8 @@
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-between;
-            width: 1000px;
-            height: 1000px;
+            width: 1400px;
+            height: 950px;
             margin: auto;
         }
 
@@ -33,7 +33,7 @@
             overflow: hidden;
             background: rgb(92, 90, 90);
             color: white;
-            transition: 0.5s;
+            transition: 0.7s;
         }
 
         .imageHolder:hover>.content {
@@ -42,12 +42,63 @@
             opacity: 0.7;
         }
 
-        .img,
+        .img {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
         .video {
             position: relative;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
+
+        .bigImageContainer {
+            position: absolute;
+            top: 0;
+            left: 260px;
+            width: 1400px;
+            height: 950px;
+            background: gray;
+            opacity: 0.7;
+            z-index: 1;
+        }
+
+        .bigImage {
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            transform: translate(-50%, -25%);
+            width: 800px;
+            height: 700px;
+            background: red;
+        }
+
+        .bigContent {
+            position: absolute;
+            top: 87%;
+            left: 50%;
+            transform: translate(-50%, -87%);
+            width: 800px;
+            height: 100px;
+            font-weight: bold;
+            font-size: 20px;
+            color: white;
+        }
+
+        .closeImage {
+            position: absolute;
+            top: 0;
+            left: 1350px;
+            width: 50px;
+            height: 50px;
+            background: black;
+            color: white;
+            border: 0;
+            cursor: pointer;
         }
     </style>
     <script>
@@ -60,6 +111,7 @@
         var text;
         var content;
         var img;
+        var bigImageContainer;
 
         function start() {
             container = document.createElement("div");
@@ -71,54 +123,91 @@
                 oReq.addEventListener("load", reqListener);
                 oReq.open("GET", "https://random.dog/woof.json");
                 oReq.send();
-
-                function reqListener() {
-                    data = JSON.parse(this.response);
-                    imageHolder = document.createElement("div");
-                    imageHolder.className = "imageHolder";
-
-                    content = document.createElement("div");
-                    content.className = "content";
-
-                    title = document.createElement("h3");
-                    title.innerHTML = "Heading";
-
-                    text = document.createElement("p");
-                    text.innerHTML = "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print";
-
-                    container.appendChild(imageHolder);
-                    imageHolder.appendChild(content);
-                    content.appendChild(title);
-                    content.appendChild(text);
-
-                    var extension = data.url.substring(data.url.lastIndexOf(".") + 1);
-                    if (extension.toLowerCase() == "mp4" || extension.toLowerCase() == "webm") {
-                        var video = document.createElement("video");
-                        video.className = "video";
-                        video.setAttribute("controls", true);
-                        video.style.width = "300px";
-                        video.style.height = "300px";
-
-                        var source = document.createElement("source");
-                        video.appendChild(source);
-                        source.setAttribute("src", data.url);
-                        source.setAttribute("type", "video/mp4");
-                        imageHolder.appendChild(video);
-                    } else {
-                        img = new Image();
-                        img.className = "img";
-                        img.src = data.url;
-                        img.style.width = "300px";
-                        img.style.height = "300px";
-                        imageHolder.appendChild(img);
-                    }
-                    img.addEventListener("click", selectImage);
-                }
             }
         }
 
-        function selectImage() {
+        function reqListener() {
+            data = JSON.parse(this.response);
+            imageHolder = document.createElement("div");
+            imageHolder.className = "imageHolder";
 
+            content = document.createElement("div");
+            content.className = "content";
+
+            title = document.createElement("h3");
+            title.innerHTML = "Heading";
+
+            text = document.createElement("p");
+            text.innerHTML = "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print";
+
+            container.appendChild(imageHolder);
+            imageHolder.appendChild(content);
+            content.appendChild(title);
+            content.appendChild(text);
+
+            var extension = data.url.substring(data.url.lastIndexOf(".") + 1);
+            if (extension.toLowerCase() == "mp4" || extension.toLowerCase() == "webm") {
+                var video = document.createElement("video");
+                video.className = "video";
+                video.setAttribute("controls", true);
+                video.style.width = "300px";
+                video.style.height = "300px";
+
+                var source = document.createElement("source");
+                video.appendChild(source);
+                source.setAttribute("src", data.url);
+                source.setAttribute("type", "video/mp4");
+                imageHolder.appendChild(video);
+
+                video.addEventListener("click", fullScreen);
+            } else {
+                img = new Image();
+                img.className = "img";
+                img.id = "myImg";
+                img.src = data.url;
+                img.style.width = "300px";
+                img.style.height = "300px";
+                imageHolder.appendChild(img);
+
+                img.addEventListener("click", fullScreen);
+            }
+
+        }
+
+
+        function fullScreen() {
+            bigImageContainer = document.createElement("div");
+            bigImageContainer.className = "bigImageContainer";
+            document.body.appendChild(bigImageContainer);
+
+            var bigImage = document.createElement("div");
+            bigImage.className = "bigImage";
+            bigImage.id = "myImg";
+            bigImage.id = "imageid"
+            bigImageContainer.appendChild(bigImage);
+
+            var bigContent = document.createElement("div");
+            bigContent.className = "bigContent";
+            bigImageContainer.appendChild(bigContent);
+
+            var bigTitle = document.createElement("h3");
+            bigTitle.innerHTML = "Heading";
+            bigContent.appendChild(bigTitle);
+
+            var bigText = document.createElement("p");
+            bigText.innerHTML = "Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print";
+            bigContent.appendChild(bigText);
+
+            var closeImage = document.createElement("button");
+            closeImage.className = "closeImage";
+            closeImage.innerHTML = "X";
+            bigImageContainer.appendChild(closeImage);
+
+            closeImage.addEventListener("click", closingImage);
+        }
+
+        function closingImage() {
+            bigImageContainer.style.visibility = "hidden";
         }
     </script>
 </head>
